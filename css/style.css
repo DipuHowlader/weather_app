@@ -1,0 +1,358 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  font-family: 'Montserrat',sans-serif;
+}
+
+img {
+  max-width: 60px;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+
+.do {
+  position: relative;
+}
+
+.do::after {
+  content: 'o';
+  position: absolute;
+  top: -9px;
+  right: -25px;
+  font-size: 4rem;
+}
+
+.wraffer {
+  width: 100%;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../asstes/weather.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../asstes/weather.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  padding-bottom: 2em;
+}
+
+.wraffer .overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #3e383887;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 99999;
+}
+
+.wraffer .overlay .bouncer {
+  width: 130px;
+  height: 130px;
+  background: #ffffff4f;
+  border-radius: 50%;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+  position: relative;
+}
+
+.wraffer .overlay.custom {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wraffer header {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wraffer header h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 20px 25px;
+}
+
+.wraffer .search-area {
+  width: 100%;
+  max-height: 20%;
+  height: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wraffer .search-box {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.wraffer .search-box input {
+  width: 140px;
+  background: #fff;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  font-family: 'Roboto';
+  font-weight: 300;
+  border-left: 1px solid #dfe0d9eb;
+}
+
+.wraffer .search-box input.state {
+  margin-right: 17px;
+}
+
+.wraffer .search-box img {
+  width: 15px;
+  margin-top: 2px;
+  color: gray;
+  margin: 0 auto;
+}
+
+.wraffer .country {
+  padding: 20px 25px;
+}
+
+.wraffer .country h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+.wraffer .country span {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.wraffer .grid-section {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wraffer .grid-section .weather-desc {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-column: 2/6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wraffer .grid-section .weather-desc .unit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wraffer .grid-section .weather-desc .unit h2 {
+  font-weight: 300;
+  margin-left: 10px;
+}
+
+.wraffer .grid-section .weather-desc .unit img {
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  background: #a9a1a129;
+  border-radius: 32px;
+}
+
+.wraffer .grid-section .weather-desc h1 {
+  font-weight: 300;
+  font-size: 2rem;
+  margin-left: 70px;
+  text-transform: capitalize;
+}
+
+.wraffer .grid-section .layer {
+  background: #a9a1a129;
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 5;
+  grid-column: 7/12;
+  padding: 20px 10px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.wraffer .grid-section .layer .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 120px;
+  margin: 0px 10px;
+  padding: 20px 0px;
+}
+
+.wraffer .grid-section .layer .box h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 7px;
+}
+
+.wraffer .grid-section .layer .box h2::after {
+  top: -3px !important;
+  right: -11px !important;
+  font-size: 1.2rem;
+}
+
+.wraffer .grid-section .layer .box span {
+  font-size: 1.6rem;
+}
+
+.wraffer .forecast {
+  padding-left: 25px;
+}
+
+.wraffer .forecast h2 {
+  font-size: 3rem;
+  font-family: montserrat;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.wraffer .forecast .cast-boxs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.wraffer .forecast .cast-boxs .single-cast {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+  width: 100px;
+  background: #a9a1a129;
+  border-radius: 4px;
+}
+
+.wraffer .forecast .cast-boxs .single-cast span {
+  font-size: 1.7rem;
+  margin: 7px 0;
+  font-weight: 400;
+}
+
+.wraffer .forecast .cast-boxs .single-cast span.do::after {
+  font-size: 1.1rem;
+  top: -3px;
+  right: -9px;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-clip-path: circle(0%);
+            clip-path: circle(0%);
+    opacity: 1;
+  }
+  50% {
+    -webkit-clip-path: circle(50%);
+            clip-path: circle(50%);
+    opacity: 0.9;
+  }
+  70% {
+    -webkit-clip-path: circle(70%);
+            clip-path: circle(70%);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-clip-path: circle(100%);
+            clip-path: circle(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-clip-path: circle(0%);
+            clip-path: circle(0%);
+    opacity: 1;
+  }
+  50% {
+    -webkit-clip-path: circle(50%);
+            clip-path: circle(50%);
+    opacity: 0.9;
+  }
+  70% {
+    -webkit-clip-path: circle(70%);
+            clip-path: circle(70%);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-clip-path: circle(100%);
+            clip-path: circle(100%);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./cloudy.png" type="image/x-icon">
+    <title>Weather api</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wraffer">
+        <div class="overlay">
+            <div class="bouncer">
+                <div class="bouncer secoundBouncer"></div>
+            </div>
+            
+        </div>
+        <header>
+            <h3>WEATHER APP</h3>
+        </header>
+        <form class="search-area">
+            <div class="search-box">
+                <img src="./asstes/search.svg" alt="search">
+                <input type="text" placeholder="City" class="city" autofocus>
+                <input type="text" class="state" placeholder="State">
+                <input type="submit" style="position: absolute;visibility: hidden;opacity: 0;">
+            </div>
+        </form>
+
+        <div class="country">
+            <h2 class="change-city"></h2>
+            <span class="date"></span>
+        </div>
+        <div class="grid-section">
+            <div class="weather-desc">
+                <div class="unit">
+                    <img src="http://openweathermap.org/img/w/50n.png" alt="weather icon" class="icon">
+                    <h2 class="degree temp do"></h2>
+                </div>
+                <h1 class="weather-info"></h1>
+
+            </div>
+
+            <div class="layer">
+                <div class="box high">
+                    <h2 class="do">6</h2>
+                    <span>High</span>
+
+                </div>
+                <div class="box wind">
+                    <h2>3.1 mph</h2>
+                    <span>Wind</span>
+                </div>
+                <div class="box sunrise">
+                    <h2>4:00</h2>
+                    <span>Sunrise</span>
+                </div>
+                <div class="box low">
+                    <h2 class="do">6</h2>
+                    <span>Low</span>
+                </div>
+                <div class="box rain">
+                    <h2>30%</h2>
+                    <span>Rain</span>
+                </div>
+                <div class="box sunset">
+                    <h2>6:00</h2>
+                    <span>Sunset</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="forecast">
+            <h2>Forecast</h2>
+            <div class="cast-boxs">
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">                   
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+                <div class="single-cast">
+                    <span class="time">6.00</span>
+                    <span class="weather"><img src="http://openweathermap.org/img/w/50n.png" alt=""></span>
+                    <span class="degree do">4</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script deffer src="./js/main.js"></script>
+</body>
+
+</html>
