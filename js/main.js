@@ -1,6 +1,4 @@
 // key = 1adcda59a9b5bb90b782b20ed9d80d6e
-// https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02
-// // pro.openweathermap.org/data/2.5/forecast/hourly?lat={lat}&lon={lon}&appid={API key}
 
 // setting current date 
 const date = document.querySelector('.date')
@@ -31,32 +29,28 @@ const city = document.querySelector('.city');
 const overlay = document.querySelector('.overlay');
 const Cost = document.querySelectorAll('.single-cast');
 const state = document.querySelector('.state')
-let j = 0
 
 // fetch api for fordcast
 const fordcast = (lat, long) => {
-    j = 0
-    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=1adcda59a9b5bb90b782b20ed9d80d6e`
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=${key}`
     fetch(url)
         .then(response => response.json())
         .then(data => {
             Cost.forEach((element) => {
-                    const unix = (data.hourly[j].dt)
+                    const unix = (data.hourly[0].dt)
                     const fordcastData = new Date(unix * 1000)
                     const hour = fordcastData.getHours() % 12 || 12
                     const minute = fordcastData.getMinutes()
 
-                    element.querySelector('.weather img').setAttribute('src', `http://openweathermap.org/img/w/${data.hourly[j].weather[0].icon}.png`)
-                    element.querySelector('.degree').innerText = Math.ceil((data.hourly[j].temp - 273.14))
+                    element.querySelector('.weather img').setAttribute('src', `http://openweathermap.org/img/w/${data.hourly[0].weather[0].icon}.png`)
+                    element.querySelector('.degree').innerText = Math.ceil((data.hourly[0].temp - 273.14))
                     element.querySelector('.time').innerText = (hour) + ':' + minute
-                    j += 5
             })
         })
     overlay.classList.add('custom')
 }
 // getting user location through Geolocation
 const geoLocacion = () => {
-    overlay.classList.remove('custom')
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPositon)
     }
@@ -96,10 +90,8 @@ const showPositon = (position) => {
             const iconcode = data.weather[0].icon
             icon.setAttribute('src', "http://openweathermap.org/img/w/" + iconcode + ".png")
         })
-        .catch((err) => {
-            if (err) {
-                console.err(err)
-            }
+        .catch((error) => {
+            console.error(error)
         });
     fordcast(lat, long)
 }
@@ -112,6 +104,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let city_name = document.querySelector('.city').value
     let state_name = document.querySelector('.state').value
+    
     if (city_name=='' || state_name ==''){
         return
     }
@@ -122,7 +115,7 @@ form.addEventListener('submit', (e) => {
         .then(response => response.json())
         .then(data => {
 
-            if(data.cod){
+            if(data.cod=='404'){
                 overlay.classList.remove('custom')
                 return
             }
@@ -156,9 +149,7 @@ form.addEventListener('submit', (e) => {
 
 
         }).catch((err) => {
-            if (err) {
                 console.error(err)
-            }
         })
     overlay.classList.remove('custom')
 
