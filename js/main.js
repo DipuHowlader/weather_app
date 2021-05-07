@@ -1,4 +1,3 @@
-// key = 1adcda59a9b5bb90b782b20ed9d80d6e
 
 // setting current date 
 const date = document.querySelector('.date')
@@ -13,7 +12,7 @@ const cdate = currentDate.getDate()
 date.innerText = `${day} ${cdate} ${month}`
 
 // getting target 
-const key = '1adcda59a9b5bb90b782b20ed9d80d6e';
+const key = '';
 const temp = document.querySelector('.temp');
 const info = document.querySelector('.weather-info');
 const form = document.querySelector('form');
